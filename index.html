@@ -1,4 +1,4 @@
-:<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -45,67 +45,62 @@ canvas {
     <header>
       <h1>Malcolm X</h1>
     </header>
-<canvas id="canvas3d" data-engine="three.js r149" width="1600 " height="900" style="width: 1280px;height: 720px;cursor: none;"></canvas>
-<div id="fun-facts">
-  <p>Malcolm X was born on May 19, 1925, in Omaha, Nebraska.</p>
-  <p>Malcolm X was originally named Malcolm Little.</p>
-  <p>Malcolm X was a member of the Nation of Islam until 1964.</p>
-  <p>Malcolm X was assassinated on February 21, 1965.</p>
-  <p>Malcolm X was a civil rights leader and activist.</p>
-</div>
+<canvas id="canvas3d" data-engine="three.js r149" width="1600 " height="900" style="width: 1280px;height: 720px;cursor: none;"></canvas> 
+    <script>
+      // List of Malcolm X facts
+var malcolmXfacts = [
+    "Malcolm X was born Malcolm Little on May 19, 1925.",
+    "Malcolm X was an American Muslim minister and human rights activist.",
+    "Malcolm X was a vocal advocate for black self-determination and separation from white society.",
+    "Malcolm X joined the Nation of Islam in 1948 and became one of its most prominent leaders.",
+    "Malcolm X was assassinated on February 21, 1965, while giving a speech in New York City."
+    // add more facts here
+];
 
-<!-- Import maps polyfill -->
-<!-- Remove this when import maps will be widely supported -->
-<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
-<script type="importmap">
-  {
-    "imports": {
-      "@splinetool/runtime":
-        "https://unpkg.com/@splinetool/runtime@0.9.304/build/runtime.js"
-    }
-  }
-</script>
-<script type="module" src="./src/main.js"></script>
+// Get the canvas element
+var canvas = document.getElementById("canvas3d");
 
-<script>
-  function rotateFacts() {
-    var facts = document.getElementById("fun-facts").children;
-    var currentFact = Math.floor(Math.random() * facts.length);
-    var nextFact = Math.floor(Math.random() * facts.length);
-    while (nextFact === currentFact) {
-      nextFact = Math.floor(Math.random() * facts.length);
-    }
+// Create a new paragraph element to display the facts
+var factElement = document.createElement("p");
+factElement.style.position = "absolute";
+factElement.style.top = "50%";
+factElement.style.left = "50%";
+factElement.style.transform = "translate(-50%, -50%)";
+factElement.style.color = "white";
+factElement.style.fontFamily = "Arial";
+factElement.style.fontSize = "36px";
+factElement.style.textAlign = "center";
+canvas.parentNode.insertBefore(factElement, canvas);
 
-    // Set the initial state of the current fact
-    facts[currentFact].style.opacity = "1";
-    facts[currentFact].style.transition = "opacity 1s ease-out";
-    facts[currentFact].style.transform = "translateX(0%)";
+// Set the interval to change the fact every 8 seconds
+setInterval(function() {
+    // Get a random fact from the list
+    var randomIndex = Math.floor(Math.random() * malcolmXfacts.length);
+    var randomFact = malcolmXfacts[randomIndex];
 
-    // Fade out the current fact and move it to the right
+    // Display the fact on the canvas for 8 seconds
+    factElement.textContent = randomFact;
     setTimeout(function() {
-      facts[currentFact].style.opacity = "0";
-      facts[currentFact].style.transform = "translateX(100%)";
-      facts[currentFact].style.transition = "opacity 1s ease-out, transform 1s ease-out";
-    }, 5000);
-
-    // Fade in the next fact from the left after the current fact has faded out and moved to the right
-    setTimeout(function() {
-      facts[nextFact].style.opacity = "1";
-      facts[nextFact].style.transition = "opacity 1s ease-in, transform 1s ease-in";
-      facts[nextFact].style.transform = "translateX(-100%)";
-    }, 5500);
-
-    // Rotate the facts again after the current fact has faded out, moved to the right, and the next fact has faded in from the left
-    setTimeout(function() {
-      rotateFacts();
-    }, 10000);
-  }
-
-  window.onload = function() {
-    rotateFacts();
-  }
-</script>
-
+        factElement.textContent = "";
+    }, 8000);
+}, 8000);
+    </script>
+    <a class="logo" href="https://spline.design"></a>
+    <!-- Import maps polyfill -->
+    <!-- Remove this when import maps will be widely supported -->
+    <script
+      async
+      src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"
+    ></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@splinetool/runtime":
+            "https://unpkg.com/@splinetool/runtime@0.9.304/build/runtime.js"
+        }
+      }
+    </script>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
+
