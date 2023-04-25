@@ -46,7 +46,7 @@ canvas {
       <h1>Malcolm X</h1>
     </header>
 <canvas id="canvas3d" data-engine="three.js r149" width="1600 " height="900" style="width: 1280px;height: 720px;cursor: none;"></canvas>
-<<div id="fun-facts">
+<div id="fun-facts">
   <p>Malcolm X was born on May 19, 1925, in Omaha, Nebraska.</p>
   <p>Malcolm X was originally named Malcolm Little.</p>
   <p>Malcolm X was a member of the Nation of Islam until 1964.</p>
@@ -76,20 +76,29 @@ canvas {
       nextFact = Math.floor(Math.random() * facts.length);
     }
 
-    // Fade out the current fact
-    facts[currentFact].style.opacity = "0";
+    // Set the initial state of the current fact
+    facts[currentFact].style.opacity = "1";
     facts[currentFact].style.transition = "opacity 1s ease-out";
+    facts[currentFact].style.transform = "translateX(0%)";
 
-    // Fade in the next fact after the current fact has faded out
+    // Fade out the current fact and move it to the right
+    setTimeout(function() {
+      facts[currentFact].style.opacity = "0";
+      facts[currentFact].style.transform = "translateX(100%)";
+      facts[currentFact].style.transition = "opacity 1s ease-out, transform 1s ease-out";
+    }, 5000);
+
+    // Fade in the next fact from the left after the current fact has faded out and moved to the right
     setTimeout(function() {
       facts[nextFact].style.opacity = "1";
-      facts[nextFact].style.transition = "opacity 1s ease-in";
-    }, 1000);
+      facts[nextFact].style.transition = "opacity 1s ease-in, transform 1s ease-in";
+      facts[nextFact].style.transform = "translateX(-100%)";
+    }, 5500);
 
-    // Rotate the facts again after the current fact has faded out and the next fact has faded in
+    // Rotate the facts again after the current fact has faded out, moved to the right, and the next fact has faded in from the left
     setTimeout(function() {
       rotateFacts();
-    }, (nextFact - currentFact + 2) * 1000);
+    }, 10000);
   }
 
   window.onload = function() {
@@ -97,21 +106,6 @@ canvas {
   }
 </script>
 
-    <a class="logo" href="https://spline.design"></a>
-    <!-- Import maps polyfill -->
-    <!-- Remove this when import maps will be widely supported -->
-    <script
-      async
-      src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"
-    ></script>
-    <script type="importmap">
-      {
-        "imports": {
-          "@splinetool/runtime":
-            "https://unpkg.com/@splinetool/runtime@0.9.304/build/runtime.js"
-        }
-      }
-    </script>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
