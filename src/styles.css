@@ -1,14 +1,3 @@
-body {
-  margin: 0;
-}
-html,
-body {
-  height: 100%;
-	overflow: hidden;
-}
-canvas {
-  display: block;
-}
 @keyframes squiggly-anim {
   0% {
     filter: url("#squiggly-0");
