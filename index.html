@@ -30,6 +30,34 @@
       .logo:hover {
         opacity: 0.8;
       }
+      #loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      #loading-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 5px solid #ccc;
+        border-top-color: #333;
+        animation: spin 1s infinite linear;
+      }
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      #fun-fact {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        font-style: italic;
+        text-align: center;
+      }
 canvas {
   width: 1280px !important;
   height: 720px !important;
@@ -45,7 +73,11 @@ canvas {
     <header>
       <h1>Malcolm X</h1>
     </header>
-<canvas id="canvas3d" data-engine="three.js r149" width="1600 " height="900" style="width: 1280px;height: 720px;cursor: none;"></canvas> 
+    <div id="loading">
+      <div id="loading-circle"></div>
+      <div id="fun-fact"></div>
+    </div>
+<canvas id="canvas3d" data-engine="three.js r149" width="1600" height="900" style="width: 1280px;height: 720px;cursor: none; display: none;"></canvas> 
     <a class="logo" href="https://spline.design"></a>
     <!-- Import maps polyfill -->
     <!-- Remove this when import maps will be widely supported -->
@@ -61,6 +93,60 @@ canvas {
         }
       }
     </script>
-    <script type="module" src="./src/main.js"></script>
+    <script type="module">
+      // Display the loading circle and fun fact while the scene is loading
+      const loadingCircle = document.querySelector("#loading-circle");
+      const funFact = document.querySelector("#fun-fact");
+      const funFacts = [
+        "Malcolm X's real name was Malcolm Little.",
+        "Malcolm X was born on May 19, 1925 in Omaha, Nebraska.",
+"Malcolm X was a prominent figure in the Nation of Islam, a black nationalist and religious movement.",
+"Malcolm X was known for his advocacy of black self-defense and his criticism of nonviolence as a means of achieving civil rights.",
+"Malcolm X's autobiography, co-written with Alex Haley, is considered a classic of African American literature.",
+"Malcolm X was assassinated on February 21, 1965, while delivering a speech in New York City."
+];
+const randomIndex = Math.floor(Math.random() * funFacts.length);
+funFact.textContent = funFacts[randomIndex];
+        // Load the scene
+  import("@splinetool/runtime").then((splinetool) => {
+    const sceneUrl =
+      "https://app.spline.design/public/api/v1/models/1bddcf0ab-1322-454d-a1a9-573a4e4df4c5/raw?format=glb";
+    splinetool.loadScene(sceneUrl).then((scene) => {
+      // Hide the loading screen and show the canvas
+      const loadingScreen = document.querySelector("#loading");
+      const canvas = document.querySelector("#canvas3d");
+      loadingScreen.style.display = "none";
+      canvas.style.display = "block";
+
+      // Set up the camera and controls
+      const camera = new splinetool.Three.PerspectiveCamera(
+        75,
+        canvas.clientWidth / canvas.clientHeight,
+        0.1,
+        1000
+      );
+      camera.position.z = 5;
+
+      const controls = new splinetool.Three.OrbitControls(
+        camera,
+        canvas
+      );
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.screenSpacePanning = false;
+      controls.minDistance = 3;
+      controls.maxDistance = 10;
+      controls.maxPolarAngle = Math.PI / 2;
+
+      // Add the scene to the canvas
+      splinetool.addSceneToCanvas(scene, canvas, camera);
+
+      // Resize the canvas with the window
+      window.addEventListener("resize", () => {
+        splinetool.resizeCanvas(canvas, camera);
+      });
+    });
+  });
+</script>
   </body>
 </html>
