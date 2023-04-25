@@ -80,7 +80,65 @@
   }
 </style>
 <canvas id="canvas3d" data-engine="three.js r149" width="1600" height="900" style="width: 1280px !important; height: 720px !important; cursor: none !important;"></canvas>
+<div class="overlay">
+  <div class="play-btn"></div>
+</div>
+<style>
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  filter: blur(10px);
+  transition: filter 0.5s ease;
+  z-index: 1;
+}
 
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.play-btn:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 20px solid black;
+}
+
+.play-btn:hover:before {
+  border-left-color: white;
+}
+
+.blur-out {
+  filter: blur(0px);
+}
+    </style>
+    <script>
+const overlay = document.querySelector('.overlay');
+const playBtn = document.querySelector('.play-btn');
+const canvas = document.querySelector('#canvas3d');
+
+playBtn.addEventListener('click', () => {
+  overlay.classList.add('blur-out');
+  canvas.style.zIndex = 2;
+});
+    </script>
 
     <div id="fact-display"></div>
     <a class="logo" href="https://spline.design"></a>
