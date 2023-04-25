@@ -44,11 +44,12 @@ canvas {
     <header>
       <h1>Malcolm X</h1>
     </header>
-    <div id="loading">
+<div id="loading">
   <div class="loading-circle"></div>
   <p>Loading...</p>
   <p id="fact"></p>
 </div>
+
 <style>
 #loading {
   display: flex;
@@ -76,23 +77,44 @@ canvas {
     transform: rotate(360deg);
   }
 }
-    </style>
-    
-<canvas id="canvas3d" data-engine="three.js r149" width="1600 " height="900" style="width: 1280px;height: 720px;cursor: none;"></canvas> 
-    <script>
-const facts = [
-  "Malcolm X's original last name was Little.",
-  "Malcolm X spent several years in prison, where he educated himself and became a Muslim.",
-  "Malcolm X was a powerful orator and his speeches inspired many people.",
-  "Malcolm X was assassinated in 1965 at the age of 39.",
-  "Malcolm X's autobiography, published in 1965, is considered a classic of African American literature.",
-  "Malcolm X was a strong advocate for black nationalism and black self-determination.",
-  "Malcolm X was a controversial figure, but his ideas continue to influence the civil rights movement and black activism today.",
-];
+</style>
 
-const factEl = document.getElementById("fact");
-factEl.innerText = facts[Math.floor(Math.random() * facts.length)];
-    </script>
+    
+<canvas id="canvas3d" data-engine="three.js r149" width="1600 " height="900" style="width: 1280px;height: 720px;cursor: none;" hidden></canvas>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Get the canvas element
+  const canvas = document.getElementById("canvas3d");
+  
+  // Load the Spline.design scene
+  // Replace the URL with the URL of your Spline.design scene
+  Spline.load("https://spline.design/s/my-scene").then((scene) => {
+    // Add the scene to the canvas
+    scene.addTo(canvas);
+
+    // Remove the loading element
+    const loading = document.getElementById("loading");
+    loading.parentNode.removeChild(loading);
+
+    // Show the canvas
+    canvas.removeAttribute("hidden");
+  });
+
+  // Set the random fun fact
+  const facts = [
+    "Malcolm X's original last name was Little.",
+    "Malcolm X spent several years in prison, where he educated himself and became a Muslim.",
+    "Malcolm X was a powerful orator and his speeches inspired many people.",
+    "Malcolm X was assassinated in 1965 at the age of 39.",
+    "Malcolm X's autobiography, published in 1965, is considered a classic of African American literature.",
+    "Malcolm X was a strong advocate for black nationalism and black self-determination.",
+    "Malcolm X was a controversial figure, but his ideas continue to influence the civil rights movement and black activism today.",
+  ];
+  const factEl = document.getElementById("fact");
+  factEl.innerText = facts[Math.floor(Math.random() * facts.length)];
+});
+</script>
+
     <a class="logo" href="https://spline.design"></a>
     <!-- Import maps polyfill -->
     <!-- Remove this when import maps will be widely supported -->
