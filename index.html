@@ -79,7 +79,93 @@
     animation: squiggly-anim 0.5s ease-out infinite;
   }
 </style>
-<canvas id="canvas3d" data-engine="three.js r149" width="1600" height="900" style="width: 1280px !important; height: 720px !important; cursor: none !important;"></canvas>
+<div class="canvas-container">
+  <canvas id="canvas3d" data-engine="three.js r149" width="1600" height="900"></canvas>
+  <button id="play-button" class="play-button">Play</button>
+</div>
+    <style>
+      .canvas-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#canvas3d {
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: blur(3px); /* initially blurred */
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  font-size: 24px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.play-button:hover {
+  opacity: 1;
+}
+
+.play-button.playing {
+  opacity: 0;
+  pointer-events: none; /* disable pointer events when playing */
+}
+    </style>
+<script>
+const canvas = document.getElementById('canvas3d');
+const playButton = document.getElementById('play-button');
+const context = canvas.getContext('2d');
+let isPlaying = false;
+
+// Function to blur the canvas
+function blurCanvas() {
+  context.filter = 'blur(3px)';
+}
+
+// Function to unblur the canvas
+function unblurCanvas() {
+  context.filter = 'none';
+}
+
+// Function to pause the canvas
+function pauseCanvas() {
+  // Code to pause the canvas goes here
+}
+
+// Function to play the canvas
+function playCanvas() {
+  // Code to play the canvas goes here
+}
+
+// Event listener for the play button
+playButton.addEventListener('click', () => {
+  if (isPlaying) {
+    // If already playing, pause and unblur the canvas
+    pauseCanvas();
+    unblurCanvas();
+    playButton.classList.remove('playing');
+    isPlaying = false;
+  } else {
+    // If not playing, play and blur the canvas
+    playCanvas();
+    blurCanvas();
+    playButton.classList.add('playing');
+    isPlaying = true;
+  }
+});
+    </script>
     <div id="fact-display"></div>
     <a class="logo" href="https://spline.design"></a>
     <script>
