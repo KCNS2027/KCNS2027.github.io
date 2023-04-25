@@ -79,12 +79,20 @@
     animation: squiggly-anim 0.5s ease-out infinite;
   }
 </style>
-<canvas id="canvas3d" data-engine="three.js r149" width="1600" height="900" style="width: 1280px !important; height: 720px !important; cursor: none !important;"></canvas>
-<div class="overlay">
-  <div class="play-btn"></div>
+<div class="canvas-container">
+  <canvas id="canvas3d" data-engine="three.js r149" width="1600" height="900" style="width: 1280px !important; height: 720px !important; cursor: none !important;"></canvas>
+  <div class="overlay">
+    <div class="play-btn"></div>
+  </div>
 </div>
 
 <style>
+.canvas-container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+}
+
 canvas {
   filter: blur(10px);
   transition: filter 0.5s ease;
