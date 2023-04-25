@@ -58,6 +58,10 @@ canvas {
   justify-content: center;
   height: 100vh;
   font-size: 1.5rem;
+    z-index: 3;
+    transition: opacity 1s ease-in-out;
+
+
 }
 
 .loading-circle {
@@ -67,6 +71,8 @@ canvas {
   width: 50px;
   height: 50px;
   animation: spin 1s ease-in-out infinite;
+    z-index: 3;
+
 }
 
 @keyframes spin {
@@ -76,6 +82,9 @@ canvas {
   to {
     transform: rotate(360deg);
   }
+}
+  canvas.loaded ~ #loading {
+  opacity: 0;
 }
 </style>
 
@@ -113,6 +122,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const factEl = document.getElementById("fact");
   factEl.innerText = facts[Math.floor(Math.random() * facts.length)];
 });
+  canvas.addEventListener("loaded", () => {
+  canvas.classList.add("loaded");
+});
+
 </script>
 
     <a class="logo" href="https://spline.design"></a>
