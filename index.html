@@ -106,7 +106,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  z-index: 3;
   animation: fade-out 1s forwards;
 }
 
@@ -198,13 +198,10 @@ const loadingScreen = document.querySelector('.loading-screen');
 playBtn.addEventListener('click', () => {
   canvas.style.filter = "blur(0px)";
   overlay.style.opacity = "0";
+  loadingScreen.classList.add('show'); // add this line
 
   setTimeout(() => {
-    loadingScreen.style.display = "block";
-  }, 500);
-
-  setTimeout(() => {
-    loadingScreen.style.display = "none";
+    loadingScreen.classList.remove('show'); // add this line
   }, 7000);
 });
 
