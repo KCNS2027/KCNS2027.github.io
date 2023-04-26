@@ -39,6 +39,10 @@
         height: auto;
         border-radius: 25px;
         text-align: center;
+            overflow: hidden;
+            overflow: hidden;
+
+
 
 
       }
@@ -79,10 +83,32 @@
 
   </head>
   <body>
-    <header>
-      <h1 id="HeaderText">Malcolm X</h1>
-    </header>
+   <header>
+  <div class="header-images">
+    <img src="https://raw.githubusercontent.com/KCNS2027/KCNS2027.github.io/main/Malcom%20X.png" alt="Malcolm X">
+    <img src="https://raw.githubusercontent.com/KCNS2027/KCNS2027.github.io/main/malcom%20x2.png" alt="Malcolm X">
+    <img src="https://raw.githubusercontent.com/KCNS2027/KCNS2027.github.io/main/malcomx.png" alt="Malcolm X">
+  </div>
+  <h1 id="HeaderText">Malcolm X</h1>
+</header>
     <style>
+        .header-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px; /* adjust this value as needed */
+    overflow: visible;
+  }
+  
+  .header-images img {
+    display: inline-block;
+    width: 33.33%; /* adjust this value based on the number of images */
+    height: auto;
+    position: relative;
+    top: -50px; /* adjust this value to control how much the head peaks through */
+  }
+  
   #HeaderText {
     font-size: 60px;
             font-family: 'Ghoust Solid', sans-serif;
