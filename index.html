@@ -31,7 +31,6 @@
         border-radius: 25px;
         text-align: center;
         overflow: hidden;
-
       }
       .logo {
         position: absolute;
@@ -68,9 +67,18 @@
   <body>
     <header>
       <div class="header-images">
-        <img src="https://raw.githubusercontent.com/KCNS2027/KCNS2027.github.io/main/Malcom%20X.png" alt="Malcolm X" />
-        <img src="https://raw.githubusercontent.com/KCNS2027/KCNS2027.github.io/main/malcom%20x2.png" alt="Malcolm X" />
-        <img src="https://raw.githubusercontent.com/KCNS2027/KCNS2027.github.io/main/malcomx.png" alt="Malcolm X" />
+        <img
+          src="https://raw.githubusercontent.com/KCNS2027/KCNS2027.github.io/main/Malcom%20X.png"
+          alt="Malcolm X"
+        />
+        <img
+          src="https://raw.githubusercontent.com/KCNS2027/KCNS2027.github.io/main/malcom%20x2.png"
+          alt="Malcolm X"
+        />
+        <img
+          src="https://raw.githubusercontent.com/KCNS2027/KCNS2027.github.io/main/malcomx.png"
+          alt="Malcolm X"
+        />
       </div>
       <h1 id="HeaderText">Malcolm X</h1>
     </header>
@@ -84,26 +92,26 @@
         overflow: hidden;
       }
 
-.header-images img {
-    display: inline;
-    width: 8%;
-    height: auto;
-    position: relative;
-    top: 0;
-    margin: auto;
-    overflow: hidden;
-    margin-left: 5%;
-    margin-right: 5%;
-    z-index: 0;
-}
+      .header-images img {
+        display: inline;
+        width: 8%;
+        height: auto;
+        position: relative;
+        top: 0;
+        margin: auto;
+        overflow: hidden;
+        margin-left: 5%;
+        margin-right: 5%;
+        z-index: 0;
+      }
       #HeaderText {
-    font-size: 100px;
-    font-family: "Ghoust Solid", sans-serif;
-    animation: squiggly-anim 0.5s ease-out infinite;
-    color: #7f0000;
-    text-shadow: #a56969 -5px 9px;
-    margin: auto;
-}
+        font-size: 100px;
+        font-family: "Ghoust Solid", sans-serif;
+        animation: squiggly-anim 0.5s ease-out infinite;
+        color: #7f0000;
+        text-shadow: #a56969 -5px 9px;
+        margin: auto;
+      }
     </style>
     <div class="canvas-container">
       <canvas
@@ -117,7 +125,6 @@
           cursor: none !important;
         "
       ></canvas>
-      <div class="loading-screen"></div>
       <div class="overlay">
         <div class="play-btn"></div>
       </div>
@@ -184,11 +191,6 @@
       playBtn.addEventListener("click", () => {
         canvas.style.filter = "blur(0px)";
         overlay.style.opacity = "0";
-        loadingScreen.classList.add("show");
-
-        setTimeout(() => {
-          loadingScreen.classList.remove("show");
-        }, 7000);
       });
     </script>
 
