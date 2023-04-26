@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html>
+  <!-- Cache images for 30 days -->
+<FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
+  Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+
+<!-- Cache CSS and JS files for 7 days -->
+<FilesMatch "\.(css|js)$">
+  Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
