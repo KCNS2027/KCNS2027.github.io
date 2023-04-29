@@ -36,11 +36,7 @@
   src: url(https://github.com/KCNS2027/KCNS2027.github.io/blob/main/Soulmate.otf?raw=true);
 }
       }
-      #BodyText {
-        text-align: center;
-        font-size: 50px;
-        font-family: HandWritten;
-      }
+
       .logo {
         position: absolute;
         bottom: 16px;
@@ -203,35 +199,113 @@
       });
     </script>
 <div class="BodyText">
-  <h2>Introduction</h2>
-  <p>Malcom X was born on May 19, 1925, under the name 'Malcom Little'. He was in a house-robbing gang..</p>
+  <h2>Malcom X: Cory United Methodist Church Cleveland, Ohio</h2>
+  <p>The Cory Methodist Church in Ohio holds a special place in the history of Malcolm X, as it was the site of one of his most famous speeches - the "Ballot or the Bullet" speech. This speech was a rallying cry for black people to take political action and demand their rights as citizens of the United States. Malcolm X gave the speech on April 3, 1964, to a packed audience at the church. In the speech, he urged black people to use their voting power to bring about change and fight against racism and inequality. The speech is considered a pivotal moment in the civil rights movement and helped to inspire a new generation of activists. Today, the Cory Methodist Church is recognized as a historic landmark and a symbol of the struggle for equality and justice.</p>
 </div>
-    <div id="fact-display"></div>
-    <a class="logo" href="https://spline.design"></a>
-    <script>
-      var malcolmXfacts = [
-        "Malcolm X was born 'Malcolm Little' on May 19, 1925.",
-        "Malcolm X was an American Muslim minister and human rights activist.",
-        "Malcolm X was a vocal advocate for black self-determination and separation from white society.",
-        "Malcolm X joined the Nation of Islam in 1948 and became one of its most prominent leaders.",
-        "Malcolm X was assassinated on February 21, 1965, while giving a speech in New York City.",
-        "Malcom X faced many death threats towards him and his family.",
-      ];
 
-      var factDisplay = document.getElementById("fact-display");
+<style>
+.BodyText {
+  text-align: center;
+  font-size: 25px;
+  font-family: "Gotham Bold", sans-serif;
+}
 
-      setInterval(function () {
-        var randomIndex = Math.floor(Math.random() * malcolmXfacts.length);
-        var randomFact = malcolmXfacts[randomIndex];
+</style>
 
-        factDisplay.textContent = randomFact;
-        factDisplay.style.opacity = 1;
+<div class="fact-container">
+    <h2>🧠RANDOM FACT🤯</h2>
 
-        setTimeout(function () {
-          factDisplay.style.opacity = 0;
-        }, 7000);
-      }, 8000);
-    </script>
+  <div id="fact-display"></div>
+</div>
+<a class="logo" href="https://spline.design"></a>
+
+<style>
+  .fact-container h2 {
+  margin: 0;
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+      border-bottom-right-radius: 5px;
+          border-bottom-left-radius: 5px;
+  background-color: #303030;
+  color: ##8a8a8a;
+  font-size: 15px;
+  font-weight: normal;
+}
+  .fact-container {
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    padding: 20px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    
+  }
+
+  .fact-container::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #1a1a1a;
+    transform: rotate(45deg);
+    top: -10px;
+    left: calc(50% - 10px);
+  }
+
+  .logo {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-image: url('https://spline.design/favicon.ico');
+    background-size: cover;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+</style>
+
+<script>
+var malcolmXfacts = [
+  "Malcolm X's father was a Baptist preacher and an avid supporter of Marcus Garvey.",
+  "Malcolm X's mother suffered a nervous breakdown and was institutionalized when he was young.",
+  "Malcolm X was a gifted student in grade school, but dropped out after a teacher told him his dream of becoming a lawyer was unrealistic for a Black person.",
+  "Malcolm X was arrested and sentenced to 10 years in prison for burglary, where he discovered the teachings of the Nation of Islam.",
+  "Malcolm X's famous 'By Any Means Necessary' quote is often taken out of context and misinterpreted.",
+  "Malcolm X publicly broke from the Nation of Islam in 1964 and founded the Organization of Afro-American Unity.",
+  "Malcolm X's autobiography, published after his death, is considered one of the most important books in American literature.",
+];
+
+var factDisplay = document.getElementById("fact-display");
+
+setTimeout(function () {
+  var randomIndex = Math.floor(Math.random() * malcolmXfacts.length);
+  var randomFact = malcolmXfacts[randomIndex];
+
+  factDisplay.textContent = randomFact;
+  factDisplay.style.opacity = 1;
+
+  setInterval(function () {
+    var randomIndex = Math.floor(Math.random() * malcolmXfacts.length);
+    var randomFact = malcolmXfacts[randomIndex];
+
+    factDisplay.textContent = randomFact;
+    factDisplay.style.opacity = 1;
+
+    setTimeout(function () {
+      factDisplay.style.opacity = 0;
+    }, 7000);
+  }, 8000);
+}, 1000);
+
+</script>
+
 
     <script
       async
