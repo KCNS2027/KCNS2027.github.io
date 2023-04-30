@@ -9,7 +9,7 @@
         font-family: "Ghoust Solid";
         src: url("https://cdn.glitch.global/772e1449-ed11-43db-b578-1eaafe8b3f62/Ghoust%20Solid.otf?v=1682401345564");
       }
-  
+
       body {
         margin: 0;
         padding: 0;
@@ -32,9 +32,9 @@
         text-align: center;
         overflow: hidden;
         @font-face {
-  font-family: HandWritten;
-  src: url(https://github.com/KCNS2027/KCNS2027.github.io/blob/main/Soulmate.otf?raw=true);
-}
+          font-family: HandWritten;
+          src: url(https://github.com/KCNS2027/KCNS2027.github.io/blob/main/Soulmate.otf?raw=true);
+        }
       }
 
       .logo {
@@ -128,6 +128,7 @@
           width: 1280px !important;
           height: 720px !important;
           cursor: none !important;
+          border-radius: 30px;
         "
       ></canvas>
       <div class="overlay">
@@ -191,235 +192,245 @@
     <script>
       const playBtn = document.querySelector(".play-btn");
       const overlay = document.querySelector(".overlay");
-      const canvas = document.querySelector("#canvas3d");
+      const canvas = document.querySelector("#canvas3d, #PrisonMap, #Memorial");
 
       playBtn.addEventListener("click", () => {
         canvas.style.filter = "blur(0px)";
         overlay.style.opacity = "0";
       });
     </script>
-<div class="container">
-  <div class="BodyText">
-    <h2>Malcom X: ⛪ Cory United Methodist Church | 📍 Cleveland, Ohio</h2>
-    <p>The Cory Methodist Church in Ohio holds a special place in the history of Malcolm X, as it was the site of one of his most famous speeches - the "Ballot or the Bullet" speech. This speech was a rallying cry for black people to take political action and demand their rights as citizens of the United States. Malcolm X gave the speech on April 3, 1964, to a packed audience at the church. In the speech, he urged black people to use their voting power to bring about change and fight against racism and inequality. The speech is considered a pivotal moment in the civil rights movement and helped to inspire a new generation of activists. Today, the Cory Methodist Church is recognized as a historic landmark and a symbol of the struggle for equality and justice.</p>
-  </div>
-  <div class="ImageContainer">
-    <img src="https://images.squarespace-cdn.com/content/v1/5af459d35417fc78cf13214b/1527026409543-91GLXT7E6YI3GF7CL9H3/08LMALCOLM_2134012.JPG?format=1000w" alt="Cory United Methodist Church">
-  </div>
-</div>
+    <div class="container">
+      <div class="BodyText">
+        <h2>Malcom X: ⛪ Cory United Methodist Church | 📍 Cleveland, Ohio</h2>
+        <p>
+          The Cory Methodist Church in Ohio holds a special place in the history
+          of Malcolm X, as it was the site of one of his most famous speeches -
+          the "Ballot or the Bullet" speech. This speech was a rallying cry for
+          black people to take political action and demand their rights as
+          citizens of the United States. Malcolm X gave the speech on April 3,
+          1964, to a packed audience at the church. In the speech, he urged
+          black people to use their voting power to bring about change and fight
+          against racism and inequality. The speech is considered a pivotal
+          moment in the civil rights movement and helped to inspire a new
+          generation of activists. Today, the Cory Methodist Church is
+          recognized as a historic landmark and a symbol of the struggle for
+          equality and justice.
+        </p>
+      </div>
+      <div class="ImageContainer">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/5af459d35417fc78cf13214b/1527026409543-91GLXT7E6YI3GF7CL9H3/08LMALCOLM_2134012.JPG?format=1000w"
+          alt="Cory United Methodist Church"
+        />
+      </div>
+    </div>
 
-<style>
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #2e2e2e;
-    color: #fff;
-    padding: 50px;
-    border-radius: 20px;
-    margin-left: 125px;
-    margin-right: 125px;
-}
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #2e2e2e;
+        color: #fff;
+        padding: 50px;
+        border-radius: 20px;
+        margin-left: 125px;
+        margin-right: 125px;
+      }
 
-.BodyText {
-  text-align: center;
-  font-size: 25px;
-  font-family: "Gotham Bold", sans-serif;
-  margin-bottom: 30px;
-}
+      .BodyText {
+        text-align: center;
+        font-size: 25px;
+        font-family: "Gotham Bold", sans-serif;
+        margin-bottom: 30px;
+      }
 
-.ImageContainer {
-    border-radius: 25px;
-    overflow: hidden;
-    width: 700px;
-    height: auto;
-    margin-top: -30px;
-    box-shadow: 0 0 35px rgb(72 72 72);
-}
+      .ImageContainer {
+        border-radius: 25px;
+        overflow: hidden;
+        width: 700px;
+        height: auto;
+        margin-top: -30px;
+        box-shadow: 0 0 35px rgb(72 72 72);
+      }
 
-.ImageContainer img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-</style>
+      .ImageContainer img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
 
-<div class="fact-container">
-  <h2>🧠RANDOM FACT🤯</h2>
+    <div class="fact-container">
+      <h2>🧠RANDOM FACT🤯</h2>
 
-  <div id="fact-display"></div>
+      <div id="fact-display"></div>
+    </div>
+    <a class="logo" href="https://spline.design"></a>
 
+    <style>
+      .fact-button {
+        font-size: 40px;
+        background-color: #141414;
+        color: #fff;
+        border: 3mm ridge rgb(78 85 83 / 72%);
+        padding: 20px;
+        cursor: pointer;
+        box-shadow: 0 10px 9px rgba(0, 0, 0, 2.3);
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 50%;
+        height: auto;
+        width: auto;
+      }
+      .fact-button:hover {
+        font-size: 40px;
+        background-color: #1c1a16;
+        color: #eddcad;
+        border: 3mm ridge #1c1a16;
+        padding: 20px;
+        cursor: pointer;
+        box-shadow: 0 10px 9px rgba(0, 0, 0, 2.3);
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 50%;
+        height: auto;
+        width: auto;
+      }
+      .fact-button:focus {
+        outline: none;
+      }
 
-</div>
-<a class="logo" href="https://spline.design"></a>
+      .fact-container h2 {
+        margin: 0;
+        padding: 10px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        background-color: #303030;
+        color: ##8a8a8a;
+        font-size: 15px;
+        font-weight: normal;
+      }
+      .fact-container {
+        background-color: #1a1a1a;
+        border-radius: 20px;
+        padding: 20px;
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 50px;
+        box-shadow: 0 5px 10px rgb(62 62 62);
+        text-align: center;
+        font-size: 24px;
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+      .fact-container::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #1a1a1a;
+        transform: rotate(45deg);
+        top: -10px;
+        left: calc(50% - 10px);
+      }
 
-<style>
-.fact-button {
-    font-size: 40px;
-    background-color: #141414;
-    color: #fff;
-    border: 3mm ridge rgb(78 85 83 / 72%);
-    padding: 20px;
-    cursor: pointer;
-    box-shadow: 0 10px 9px rgba(0, 0, 0, 2.3);
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 50%;
-    height: auto;
-    width: auto;
-}
-  .fact-button:hover {
-    font-size: 40px;
-    background-color: #1c1a16;
-    color: #eddcad;
-    border: 3mm ridge #1c1a16;
-    padding: 20px;
-    cursor: pointer;
-    box-shadow: 0 10px 9px rgba(0, 0, 0, 2.3);
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 50%;
-    height: auto;
-    width: auto;
-}
-.fact-button:focus {
-  outline: none;
-}
+      .logo {
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-image: url("https://spline.design/favicon.ico");
+        background-size: cover;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+      }
+    </style>
 
+    <script>
+      var malcolmXfacts = [
+        "Malcolm X's father was a Baptist preacher and an avid supporter of Marcus Garvey.",
+        "Malcolm X's mother suffered a nervous breakdown and was institutionalized when he was young.",
+        "Malcolm X was a gifted student in grade school, but dropped out after a teacher told him his dream of becoming a lawyer was unrealistic for a Black person.",
+        "Malcolm X was arrested and sentenced to 10 years in prison for burglary, where he discovered the teachings of the Nation of Islam.",
+        "Malcolm X's famous 'By Any Means Necessary' quote is often taken out of context and misinterpreted.",
+        "Malcolm X publicly broke from the Nation of Islam in 1964 and founded the Organization of Afro-American Unity.",
+        "Malcolm X's autobiography, published after his death, is considered one of the most important books in American literature.",
+        "Malcolm X wrote letters to a wide range of people during his life, including his family, friends, and even high-ranking government officials.",
+        "Malcolm X's birth name was Malcolm Little, but he changed it to Malcolm X to represent his lost tribal name.",
+        "Malcolm X was deeply influenced by his travels to Africa and the Middle East, where he met with political leaders and became more radicalized in his views.",
+        "Malcolm X was assassinated in 1965 while giving a speech in New York City, at the age of 39.",
+      ];
 
+      var factDisplay = document.getElementById("fact-display");
 
-  .fact-container h2 {
-  margin: 0;
-  padding: 10px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-      border-bottom-right-radius: 5px;
-          border-bottom-left-radius: 5px;
-  background-color: #303030;
-  color: ##8a8a8a;
-  font-size: 15px;
-  font-weight: normal;
-}
-.fact-container {
-    background-color: #1a1a1a;
-    border-radius: 20px;
-    padding: 20px;
-    width: 500px;
-    margin: 0 auto;
-    margin-top: 50px;
-    box-shadow: 0 5px 10px rgb(62 62 62);
-    text-align: center;
-    font-size: 24px;
-    color: #fff;
-    font-family: Arial, sans-serif;
-}
-  .fact-container::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #1a1a1a;
-    transform: rotate(45deg);
-    top: -10px;
-    left: calc(50% - 10px);
-  }
+      var currentFactIndex = 0;
+      var isTransitioning = false;
 
-  .logo {
-    display: block;
-    width: 50px;
-    height: 50px;
-    background-image: url('https://spline.design/favicon.ico');
-    background-size: cover;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-  }
-</style>
+      function showFact(index) {
+        if (isTransitioning) {
+          return;
+        }
 
-<script>
-var malcolmXfacts = [
-  "Malcolm X's father was a Baptist preacher and an avid supporter of Marcus Garvey.",
-  "Malcolm X's mother suffered a nervous breakdown and was institutionalized when he was young.",
-  "Malcolm X was a gifted student in grade school, but dropped out after a teacher told him his dream of becoming a lawyer was unrealistic for a Black person.",
-  "Malcolm X was arrested and sentenced to 10 years in prison for burglary, where he discovered the teachings of the Nation of Islam.",
-  "Malcolm X's famous 'By Any Means Necessary' quote is often taken out of context and misinterpreted.",
-  "Malcolm X publicly broke from the Nation of Islam in 1964 and founded the Organization of Afro-American Unity.",
-  "Malcolm X's autobiography, published after his death, is considered one of the most important books in American literature.",
-  "Malcolm X wrote letters to a wide range of people during his life, including his family, friends, and even high-ranking government officials.",
-  "Malcolm X's birth name was Malcolm Little, but he changed it to Malcolm X to represent his lost tribal name.",
-  "Malcolm X was deeply influenced by his travels to Africa and the Middle East, where he met with political leaders and became more radicalized in his views.",
-  "Malcolm X was assassinated in 1965 while giving a speech in New York City, at the age of 39."
-];
+        isTransitioning = true;
 
-var factDisplay = document.getElementById("fact-display");
+        factDisplay.style.opacity = 0;
 
-var currentFactIndex = 0;
-var isTransitioning = false;
+        setTimeout(function () {
+          factDisplay.textContent = malcolmXfacts[index];
+          factDisplay.style.opacity = 1;
+          currentFactIndex = index;
+          isTransitioning = false;
+        }, 500);
+      }
 
-function showFact(index) {
-  if (isTransitioning) {
-    return;
-  }
-  
-  isTransitioning = true;
-  
-  factDisplay.style.opacity = 0;
-  
-  setTimeout(function() {
-    factDisplay.textContent = malcolmXfacts[index];
-    factDisplay.style.opacity = 1;
-    currentFactIndex = index;
-    isTransitioning = false;
-  }, 500);
-}
+      function showNextFact() {
+        var nextIndex = (currentFactIndex + 1) % malcolmXfacts.length;
+        showFact(nextIndex);
+      }
 
-function showNextFact() {
-  var nextIndex = (currentFactIndex + 1) % malcolmXfacts.length;
-  showFact(nextIndex);
-}
+      function showPreviousFact() {
+        var previousIndex =
+          (currentFactIndex + malcolmXfacts.length - 1) % malcolmXfacts.length;
+        showFact(previousIndex);
+      }
 
-function showPreviousFact() {
-  var previousIndex = (currentFactIndex + malcolmXfacts.length - 1) % malcolmXfacts.length;
-  showFact(previousIndex);
-}
+      showFact(0);
 
-showFact(0);
+      var autoFactInterval = setInterval(showNextFact, 8000);
 
-var autoFactInterval = setInterval(showNextFact, 8000);
+      var nextButton = document.createElement("button");
+      nextButton.innerHTML = "&#8594;";
+      nextButton.classList.add("fact-button");
+      nextButton.addEventListener("click", function () {
+        clearInterval(autoFactInterval);
+        showNextFact();
+        autoFactInterval = setInterval(showNextFact, 8000);
+      });
 
-var nextButton = document.createElement("button");
-nextButton.innerHTML = "&#8594;";
-nextButton.classList.add("fact-button");
-nextButton.addEventListener("click", function() {
-  clearInterval(autoFactInterval);
-  showNextFact();
-  autoFactInterval = setInterval(showNextFact, 8000);
-});
+      var previousButton = document.createElement("button");
+      previousButton.innerHTML = "&#8592;";
+      previousButton.classList.add("fact-button");
+      previousButton.addEventListener("click", function () {
+        clearInterval(autoFactInterval);
+        showPreviousFact();
+        autoFactInterval = setInterval(showNextFact, 8000);
+      });
 
-var previousButton = document.createElement("button");
-previousButton.innerHTML = "&#8592;";
-previousButton.classList.add("fact-button");
-previousButton.addEventListener("click", function() {
-  clearInterval(autoFactInterval);
-  showPreviousFact();
-  autoFactInterval = setInterval(showNextFact, 8000);
-});
+      var buttonContainer = document.createElement("div");
+      buttonContainer.appendChild(previousButton);
+      buttonContainer.appendChild(nextButton);
+      buttonContainer.classList.add("button-container");
 
-
-var buttonContainer = document.createElement("div");
-buttonContainer.appendChild(previousButton);
-buttonContainer.appendChild(nextButton);
-buttonContainer.classList.add("button-container");
-
-var factContainer = document.querySelector(".fact-container");
-factContainer.appendChild(buttonContainer);
-
-</script>
-
+      var factContainer = document.querySelector(".fact-container");
+      factContainer.appendChild(buttonContainer);
+    </script>
 
     <script
       async
