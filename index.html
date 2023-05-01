@@ -542,7 +542,14 @@
   /* Center horizontally */
   left: 50%;
   transform: translateX(-50%);
+  animation: fadeBackground 6s;
+  animation-fill-mode: forwards;
 }
+@keyframes fadeBackground {
+  from { background-color: #FCE97F; }
+  to { background-color: #2EB07B; }
+}
+
 
 .point:hover {
   background-color: #333333;
