@@ -222,6 +222,7 @@
           src="https://images.squarespace-cdn.com/content/v1/5af459d35417fc78cf13214b/1527026409543-91GLXT7E6YI3GF7CL9H3/08LMALCOLM_2134012.JPG?format=1000w"
           alt="Cory United Methodist Church"
         />
+<p style="font-size: 25px; font-family: 'Ghoust Solid', sans-serif; color: #8c8b8b; text-align: center;">📸 Image of Malcolm X at Cory United Methodist Church, Cleveland, Ohio.</p>
       </div>
     </div>
 
@@ -444,6 +445,104 @@
       }
     </script>
     <script type="module" src="./src/main.js"></script>
+    
+<div class="timeline" style="margin-top: 5%;">
+  <div class="point" style="left: -.5%;" onclick="showPopup('1952')">1952</div>
+  <div class="popup" id="popup-1952">In 1952, Malcolm X was released from prison after serving six years for burglary and other crimes. 
+      <img src="https://cdn.glitch.global/772e1449-ed11-43db-b578-1eaafe8b3f62/imprisoned.jpg?v=1682914098882">
+  </div>
+  <div class="point" style="left: 20%;" onclick="showPopup('1954')">1954</div>
+  <div class="popup" id="popup-1954">In 1954, Malcolm X became a minister of the Nation of Islam.
+  <img src="https://cdn.glitch.global/772e1449-ed11-43db-b578-1eaafe8b3f62/minister.jpg?v=1682914750635">
+  </div>
+  <div class="point" style="left: 39%;" onclick="showPopup('1957')">1957</div>
+  <div class="popup" id="popup-1957">In 1957, Malcolm X founded the first temple of the Nation of Islam in New York City.
+   <img src="https://cdn.glitch.global/772e1449-ed11-43db-b578-1eaafe8b3f62/temple.png?v=1682914884281">
+  </div>
+  <div class="point" style="left: 59%;" onclick="showPopup('1963')">1963</div>
+  <div class="popup" id="popup-1963">In 1963, Malcolm X delivered his famous "Message to the Grassroots" speech in Detroit, Michigan.
+   <img src="https://cdn.glitch.global/772e1449-ed11-43db-b578-1eaafe8b3f62/malcom%20x.jpg?v=1682914924295">
+  </div>
+  <div class="point" style="left: 79%;" onclick="showPopup('1964')">1964</div>
+  <div class="popup" id="popup-1964">In 1964, Malcolm X broke ties with the Nation of Islam and founded the Organization of Afro-American Unity.
+   <img src="https://cdn.glitch.global/772e1449-ed11-43db-b578-1eaafe8b3f62/pin.jpg?v=1682914966969">
+  </div>
+  <div class="point" style="left: 99.5%;" onclick="showPopup('1965')">1965</div>
+  <div class="popup" id="popup-1965">In 1965, Malcolm X was assassinated while giving a speech at the Audubon Ballroom in New York City.
+   <img src="https://cdn.glitch.global/772e1449-ed11-43db-b578-1eaafe8b3f62/assasinated.jpg?v=1682915050511">
+  </div>
+</div>
+
+<style>
+
+
+.popup img {
+  max-width: 100%;
+  max-height: 70%;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.timeline {
+  position: relative;
+  height: 6px;
+  width: 85%;
+  background-color: #1a1a1a;
+  border-radius: 50px;
+  outline: #474747 solid 3px;
+}
+
+.point {
+  position: absolute;
+  top: -15px;
+  width: fit-content;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ad9e9e;
+  border: 2px solid #3b3b3b;
+  text-align: center;
+  font-size: 25px;
+  line-height: 20px;
+  cursor: pointer;
+  color: #3b3b3b;
+  padding: 5px;
+          font-family: "Gotham Bold", sans-serif;
+
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  top: -400px;
+  left: 50%;
+  width: 400px;
+  height: 300px;
+  margin-left: -150px;
+  overflow: hidden;
+  padding: 10px;
+  background-color: #1a1a1a;
+  color: #fff;
+  border-radius: 25px;
+  font-size: 23px;
+  text-align: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 50;
+  pointer-events: none;
+  font-family: "Gotham Bold", sans-serif;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 5);
+
+}
+.point:hover {
+  background-color: #333333;
+  color: #575757;
+}
+
+.point:hover + .popup {
+  display: block;
+}
+</style>
+
   </body>
 </html>
 <!-- ANIMATION -->
