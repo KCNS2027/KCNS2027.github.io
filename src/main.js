@@ -13,4 +13,3 @@ function loadScene() {
   }
 }
 
-setInterval(loadScene, 1000);
